@@ -39,6 +39,7 @@
 (require 'generic)
 
 
+;;;###autoload
 (define-generic-mode brainfuck-mode
   nil
   nil
@@ -56,6 +57,7 @@
       "\C-cf" 'bf-help:describe-symbol)
   (use-local-map brainfuck-mode:local-map))
 
+;;;###autoload
 (langdoc:define-help-mode bf-help "Major mode for brainfuck help" "*Brainfuck Help*"
                           'bf-help:sym-called-at-point
                           '(">" "<" "+" "-" "." "," "[" "]")
@@ -63,7 +65,6 @@
                           "`\\([^']+\\)'"
                           (lambda (a b) b) (lambda (a b) b)
                           "`" "'")
-
 
 (defun bf-help:doc-fun ()
   (make-local-variable 'eldoc-documentation-function)
