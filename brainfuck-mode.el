@@ -38,7 +38,6 @@
 (require 'langdoc)
 (require 'generic)
 
-
 ;;;###autoload
 (define-generic-mode brainfuck-mode
   nil
