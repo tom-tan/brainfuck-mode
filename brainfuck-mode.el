@@ -3,6 +3,8 @@
 ;; Copyright (C) 2013  by Tomoya Tanjo
 
 ;; Author: Tomoya Tanjo <ttanjo@gmail.com>
+;; URL: https://github.com/tom-tan/brainfuck-mode/
+;; Package-Requires: ((langdoc "20130601.1450"))
 ;; Keywords: brainfuck, langdoc
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -21,7 +23,7 @@
 ;;; Commentary:
 
 ;; This library helps you to write brainfuck in Emacs.
-;; It is also an example to define eldoc functions by using langdoc.
+;; This is also an example to define help document functions by using langdoc.
 ;;
 ;; Requirement:
 ;;    langdoc.el
