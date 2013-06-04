@@ -84,15 +84,15 @@
 
 (defun bf-help-lookup-doc (sym)
   "Returns document string for SYM."
-  (cond
-    ((equal sym ">") "Increment the pointer.")
-    ((equal sym "<") "Decrement the pointer.")
-    ((equal sym "+") "Increment the value indicated by the pointer.")
-    ((equal sym "-") "Decrement the value indicated by the pointer.")
-    ((equal sym ".") "Print the value indicated by the pointer.")
-    ((equal sym ",") "Read one byte from input and store it in the indicated value.")
-    ((equal sym "[") "Jump to the matching `]' if the indicated value is zero.")
-    ((equal sym "]") "Jump to the matching `[' if the indicated value is not zero.")))
+  (pcase sym
+    (">" "Increment the pointer.")
+    ("<" "Decrement the pointer.")
+    ("+" "Increment the value indicated by the pointer.")
+    ("-" "Decrement the value indicated by the pointer.")
+    ("." "Print the value indicated by the pointer.")
+    ("," "Read one byte from input and store it in the indicated value.")
+    ("[" "Jump to the matching `]' if the indicated value is zero.")
+    ("]" "Jump to the matching `[' if the indicated value is not zero.")))
 
 (defun bf-help-summerize-doc (sym doc)
   (concat sym " : " (car (split-string doc "[\n\r]+"))))
