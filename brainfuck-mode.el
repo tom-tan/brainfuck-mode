@@ -50,7 +50,7 @@
   '(define-bf-keymap bf-help-doc-fun)
   "Major mode for brainfuck")
 
-(defvar brainfuck-mode-local-map nil "Keymap for brainfuck-mode")
+(defvar brainfuck-mode-local-map nil "Keymap for brainfuck-mode.")
 
 (defun define-bf-keymap ()
   (setq brainfuck-mode-local-map (make-keymap))
@@ -83,7 +83,7 @@
     (when doc (bf-help-summerize-doc sym doc))))
 
 (defun bf-help-lookup-doc (sym)
-  "Returns document string for SYM."
+  "Return document string for SYM."
   (pcase sym
     (">" "Increment the pointer.")
     ("<" "Decrement the pointer.")
