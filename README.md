@@ -9,10 +9,6 @@ Requirement:
 To use this package, add the following line to your `.emacs` file:
 ```emacs
     (require 'brainfuck-mode)
-    ;; If you use brainfuck-mode for bf files
-    (setq auto-mode-alist
-          (append '(("\\.bf$" . brainfuck-mode))
-                  auto-mode-alist))
 ```
 brainfuck-mode highlights some keywords for usability.
 By using `M-x eldoc-mode`, you can see the help string in minibuffer.

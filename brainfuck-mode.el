@@ -50,6 +50,9 @@
   '(define-bf-keymap bf-help-doc-fun)
   "Major mode for brainfuck")
 
+;;;###autoload
+(add-to-list 'auto-mode-alist '("\\.bf\\'" . brainfuck-mode))
+
 (defvar brainfuck-mode-local-map nil "Keymap for brainfuck-mode.")
 
 (defun define-bf-keymap ()
