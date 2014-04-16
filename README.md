@@ -6,6 +6,8 @@ This is also an example to define help document functions by using langdoc.
 Requirement:
    langdoc.el
 
+In usual, you can install it by using `package-install` via [MELPA](http://melpa.milkbox.net/).
+
 To use this package, add the following line to your `.emacs` file:
 ```emacs
     (require 'brainfuck-mode)
