@@ -40,15 +40,26 @@
 (require 'langdoc)
 (require 'generic)
 
+(defvar bf-syntax-table
+  (let ((table (make-syntax-table)))
+    ;; Emacs' default syntax table treats " as a string delimiter, but
+    ;; we treat it as just a normal character.
+    (modify-syntax-entry ?\" "." table)
+    table))
+
 ;;;###autoload
-(define-generic-mode brainfuck-mode
-  nil
-  nil
-  '(("[^]><+.,[-]+" . font-lock-comment-face)
-    ("\\]\\|\\["    . font-lock-keyword-face))
-  '("\\.bf\\'")
-  '(define-bf-keymap bf-help-doc-fun)
-  "Major mode for brainfuck")
+(define-derived-mode brainfuck-mode prog-mode "Brainfuck"
+  "Major mode for brainfuck"
+  :syntax-table bf-syntax-table
+  (font-lock-add-keywords
+   nil
+   (list
+    (cons (rx (any "[" "]"))
+          font-lock-keyword-face)
+    (cons (rx (not (any "[" "]" ">" "<" "+" "-" "." ",")))
+          font-lock-comment-face)))
+  (define-bf-keymap)
+  (bf-help-doc-fun))
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.bf\\'" . brainfuck-mode))
