@@ -3,8 +3,9 @@
 This library helps you to write brainfuck in Emacs.
 This is also an example to define help document functions by using langdoc.
 
-Requirement:
-   langdoc.el
+Requirements:
+  * Emacs 24 or later
+  * langdoc.el
 
 You can install it by using `package-install` via [MELPA](http://melpa.milkbox.net/).
 

@@ -25,8 +25,9 @@
 ;; This library helps you to write brainfuck in Emacs.
 ;; This is also an example to define help document functions by using langdoc.
 ;;
-;; Requirement:
-;;    langdoc.el
+;; Requirements:
+;;   * Emacs 24 or later
+;;   * langdoc.el
 ;;
 ;; To use this package, add the following line to your .emacs file:
 ;;     (require 'brainfuck-mode)
